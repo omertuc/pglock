@@ -110,6 +110,8 @@ fn run(client: &mut Client, should_sleep: bool, safe: bool) -> Result<(), Error>
 }
 
 fn main() -> Result<(), Error> {
+    // Assuming that the database is running 
+    // e.g. docker run --env=POSTGRES_USER=admin --env=POSTGRES_PASSWORD=admin --env=POSTGRES_DB=library -p 5432:5432 -it postgres 
     let mut client = pg_client()?;
 
     run(&mut client, false, false)?;
